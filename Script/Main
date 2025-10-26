@@ -72,9 +72,6 @@ local tabs = {
     ["Basically FNF: Remix"] = {
         {"AUTO PLAYER", 'loadstring(game:HttpGet("https://rawscripts.net/raw/Basically-FNF:-Remix-AutoPlayer-Lite-9989"))()'}
     },
-    ["Blackhole"] = {
-        {"BLACKHOLE", 'loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-op-blackhole-script-20078"))()'}
-    },
     ["Block Spin"] = {
         {"HERMANOS-DEV", [[
 local loader = loadstring
