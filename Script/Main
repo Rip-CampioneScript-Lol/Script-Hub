@@ -1,8 +1,8 @@
 local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/Rip-CampioneScript-Lol/Script-Hub/refs/heads/main/Script/UI"))()
 
 local Window = Rayfield:CreateWindow({
-    Name = "Anti-Hambreado Team | Script Hub",
-    LoadingTitle = "Anti-Hambreado Team",
+    Name = "Anti-Hambreado Team | Script Hub",
+    LoadingTitle = "Anti-Hambreado Team",
     LoadingSubtitle = "By FeliciaXxxTop & No-Slowww",
     ConfigurationSaving = {
         Enabled = true,
