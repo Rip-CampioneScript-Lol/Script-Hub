@@ -2,8 +2,8 @@ local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/Rip-
 
 local Window = Rayfield:CreateWindow({
     Name = "Anti-Hambreado Team | Script Hub",
-    LoadingTitle = "Anti-Hambreado Team",
-    LoadingSubtitle = "By FeliciaXxxTop & No-Slowww",
+    LoadingTitle = "Anti-Hambreado Team",
+    LoadingSubtitle = "By FeliciaXxxTop & No-Slowww",
     ConfigurationSaving = {
         Enabled = true,
         FolderName = "AntiHambreado",
