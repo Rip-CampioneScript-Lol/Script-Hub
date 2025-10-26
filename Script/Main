@@ -1,1 +1,293 @@
+-- ANTI-HAMBREADO SCRIPT HUB 
+-- Canal: https://youtube.com/@anti-hambreadoscript-team
+-- Discord: https://discord.gg/rTGF5xhe3h
+
+local NotificationService = game:GetService("StarterGui")
+
+NotificationService:SetCore("SendNotification", {
+    Title = "⚡ Anti-Hambreado Script Hub",
+    Text = "💬 discord.gg/rTGF5xhe3h",
+    Duration = 10
+})
+
+local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/Rip-CampioneScript-Lol/Script-Hub/refs/heads/main/Script/UI"))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "Anti-Hambreado Team | Script Hub",
+    LoadingTitle = "Anti-Hambreado Team | Script Hub",
+    LoadingSubtitle = "By FeliciaXxxTop & No-Slowww",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = "AntiHambreado",
+        FileName = "AHConfig"
+    },
+    Discord = {
+        Enabled = true,
+        Invite = "rTGF5xhe3h",
+        RememberJoins = true
+    }
+})
+
+local NotificationService = game:GetService("StarterGui")
+NotificationService:SetCore("SendNotification", {
+    Title = "Anti-Hambreado Script Team",
+    Text = "https://discord.gg/rTGF5xhe3h",
+    Duration = 10
+})
+
+local function copyToClipboard(text)
+    setclipboard(text)
+    NotificationService:SetCore("SendNotification", {
+        Title = "Enlace copiado",
+        Text = "Este archivo debe ser descargado para ser ejecutado, el link directo se copió a tu portapapeles",
+        Duration = 5
+    })
+end
+
+local function addButton(tab, name, urlOrCode)
+    if string.find(urlOrCode, "loadstring") then
+        tab:CreateButton({
+            Name = name,
+            Callback = function()
+                loadstring(urlOrCode)()
+            end
+        })
+    elseif string.find(urlOrCode, "mediafire.com") then
+        tab:CreateButton({
+            Name = name,
+            Callback = function()
+                copyToClipboard(urlOrCode)
+            end
+        })
+    else
+        tab:CreateButton({
+            Name = name,
+            Callback = function()
+                loadstring(game:HttpGet(urlOrCode))()
+            end
+        })
+    end
+end
+
+local tabs = {
+    ["99 Noches en el Bosque"] = {
+        {"NUEVO SCRIPT", "https://www.mediafire.com/file/1t99xa9wv0tgytz/SCRIPT+99+NOCHES+EN+EL+BOSQUE+ALINS.txt/file"},
+        {"BONK HUB", "https://www.mediafire.com/file/87bvqmx9qtq9ynq/KAITAN+99NOCHES.txt/file"},
+        {"BONK HUB NORMAL", "https://www.mediafire.com/file/8snedlegw42wys7/SCRIPT+BONK+HUB+NORMAL.txt/file"},
+        {"H4X HUB", "https://www.mediafire.com/file/2florr3w9dw0ydf/SCRIPT+H4X.txt/file"},
+        {"VOID WARE", "https://www.mediafire.com/file/nm491e4nvwnbr2j/SCRIPT+VOIDWARE.txt/file"},
+        {"VORTEX HUB", "https://www.mediafire.com/file/svhh5vhscr8ogmi/SCRIPT+99NIGHT+VORTEX+HUB.txt/file"},
+        {"FOXNAME", "https://www.mediafire.com/file/pb8chz4qx3e14ok/SCRIPT+FOXNAME+DIAMOND99.txt/file"},
+        {"SERIOUSLY", "https://www.mediafire.com/file/2lg692qhlvht152/SCRIPT+SERIOUSLY+99NOCHES.txt/file"}
+    },
+    ["Arise Crossover"] = {
+        {"GOOMBA HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/JustLevel/goombahub/main/AriseCrossover.lua"))()'}
+    },
+    ["Attack on Titan Revolution"] = {
+        {"LUNARZ", "https://www.mediafire.com/file/5g5cet0ha9da467/SCRIPT+LUNARZ.txt/file"}
+    },
+    ["Basically FNF: Remix"] = {
+        {"AUTO PLAYER", 'loadstring(game:HttpGet("https://rawscripts.net/raw/Basically-FNF:-Remix-AutoPlayer-Lite-9989"))()'}
+    },
+    ["Blackhole"] = {
+        {"BLACKHOLE", 'loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-op-blackhole-script-20078"))()'}
+    },
+    ["Block Spin"] = {
+        {"HERMANOS-DEV", [[
+local loader = loadstring
+local url = "https://raw.githubusercontent.com/hermanos-dev/hermanos-hub/refs/heads/main/BlockSpin/blockspin-pvp.lua"
+local response = game:HttpGet(url)
+loader(response)()]],
+        {"QUARTY", "https://www.mediafire.com/file/qg500i15aeucrbv/SCRIPT+QUARTY.txt/file"}
+    },
+    ["BloodMoney"] = {
+        {"ANTI-HAMBREADO TEAM SCRIPT", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/FloppHub-Team/Scripts-idk/refs/heads/main/BloodMoney%20Script.txt"))()'}
+    },
+    ["Blox Fruits"] = {
+        {"ANDEPZAIHUB", "https://www.mediafire.com/file/xpnq8upphf1enys/SCRIPT+ANDEPZAIHUB.TXT/file"},
+        {"ASTRAL HUB", 'loadstring(game:HttpGet("https://cdn.robloxscripts.gg/public/furky/furky-astral-source.lua"))()'},
+        {"BLUE X HUB", "https://www.mediafire.com/file/mizwgtlc6gdwkl1/SCRIPT+BLUEX+HUB.txt/file"},
+        {"DAT THG", "https://www.mediafire.com/file/j6d2fva815bpfpp/SCRIPT+DAT+THG.txt/file"},
+        {"HOHO HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()'},
+        {"REDZ HUB", [[
+local Settings = {
+  JoinTeam = "Pirates";
+  Translator = true;
+}
+getgenv().BETA_VERSION = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau"))(Settings)]]},
+        {"SCRIPT SERVER HOP", "https://www.mediafire.com/file/2sz4aephhdiu0l0/SCRIPT+HOP+SERVER.txt/file"},
+        {"TSUO HUB", "https://www.mediafire.com/file/giyq8l80fpqk2jb/SCRIPT+TSUO+HUB.txt/file"},
+        {"W-AZURE", "https://www.mediafire.com/file/lvehh3dle23ej5a/NUEVO+W-AZURE+TRUE.txt/file"},
+        {"NEW OMG HUB", "https://www.mediafire.com/file/yqty2pkjbqmlfut/SCRIPT+NEW+OMG+HUB+2025.txt/file"},
+        {"TEDDY HUB", "https://www.mediafire.com/file/uweo7ms5gvl1c3h/SCRIPT+TEDDY+HUB.txt/file"},
+        {"GRAVITY HUB", "https://www.mediafire.com/file/nkbcvf5y1ijevcb/GRAVITY+HUB.txt/file"}
+    },
+    ["Blue Lock Rivals"] = {
+        {"OMG HUB", "https://www.mediafire.com/file/yqty2pkjbqmlfut/SCRIPT+NEW+OMG+HUB+2025.txt/file"}
+    },
+    ["Dead Rails"] = {
+        {"NAT HUB", "https://www.mediafire.com/file/d89mbxqwkzjwt3o/SCRIPT_NAT_HUB.txt/file"},
+        {"SKULL HUB", "https://www.mediafire.com/file/fhtm57gmk7gzuk4/SCRIPT+SKULL+HUB+AUTO+BONOS.txt/file"}
+    },
+    ["Dead Defense"] = {
+        {"GUMANBA", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/DeadDefense"))()'}
+    },
+    ["Demon Blade"] = {
+        {"DEMON BLADE SCRIPT", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/shakaUnlocked/IiI/refs/heads/main/dbrw.lua"))()'}
+    },
+    ["Demon Fall"] = {
+        {"NOOB HUB", "https://www.mediafire.com/file/gkn6mmk0jgv2gui/Script_Demon_FALL.txt/file"}
+    },
+    ["Dig"] = {
+        {"FROSTBYTE", "https://www.mediafire.com/file/j0ua34pwf4lnv94/SCRIPT+FROSTBYTE+DIG.txt/file"}
+    },
+    ["Doors"] = {
+        {"DOORS SCRIPT", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/TheHunterSolo1/Scripts/refs/heads/main/Protected_2809220311826785.lua.txt"))()'}
+    },
+    ["Dragon Ball Rage"] = {
+        {"IMP HUB", "https://www.mediafire.com/file/l0gzkkmv5vlfedh/SCRIPT+IMP+HUB.txt/file"}
+    },
+    ["Dragon Blox"] = {
+        {"DEMONIC HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Prosexy/Demonic-HUB-V2/main/DemonicHub_V2.lua", true))()'}
+    },
+    ["Dandy's World"] = {
+        {"DANDY'S WORLD HUB", 'loadstring(game:HttpGet("https://pastebin.com/raw/H3u62n7D"))()'}
+    },
+    ["Evade"] = {
+        {"SPEEDHAX", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/thesigmacorex/RobloxScripts/main/speedhax"))()'}
+    },
+    ["Fisch"] = {
+        {"NATIVE HUB", "https://www.mediafire.com/file/7b8apdysqo369ne/SCRIPT_NATIVE_NEW.txt/file"},
+        {"ZENITH HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/rxito/ZenithHub/refs/heads/main/Loader"))()'},
+        {"ALCHEMY HUB", 'loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()'},
+        {"RIFT HUB", "https://www.mediafire.com/file/1kforlypif7dbdu/SCRIPT+RIFT+HUB.txt/file"}
+    },
+    ["Forsaken"] = {
+        {"LOLNOTAKID", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/project/refs/heads/main/obfuscated_script-1758536932336.lua.txt"))()'},
+        {"TSUO HUB", "https://www.mediafire.com/file/giyq8l80fpqk2jb/SCRIPT+TSUO+HUB.txt/file"}
+    },
+    ["Fruit Battlegrounds"] = {
+        {"DEVSEHUB", [[
+script_key="replacekey";
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/d92ae761864b636f15e5214d8b9e1b57.lua"))()
+-- Key: https://ads.luarmor.net/get_key?for=DevseHUB_KEY-LpxFTiZSpAVU]]}
+    },
+    ["Grand Piece Online"] = {
+        {"SWITCH HUB", "https://www.mediafire.com/file/ze8c788cair9stx/SCRIPT+SWITCH+HUB.txt/file"}
+    },
+    ["Grow a Garden"] = {
+        {"DUPLICAR DINERO", "https://www.mediafire.com/file/t3uuf2f10p0xww1/SCRIPT+LUNOR.txt/file"},
+        {"GUMANBA", "https://www.mediafire.com/file/t3uuf2f10p0xww1/SCRIPT+LUNOR.txt/file"},
+        {"KICIAHOOK", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/kiciahook/kiciahook/refs/heads/main/loader.luau"))()'},
+        {"LUNOR HUB", [[
+script_key = 'Insert Lunor Key Here';
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Catto-YFCN/Lunor_Dependencies/refs/heads/main/Loader'))()
+-- Key: https://ads.luarmor.net/get_key?for=LinkvertiseAD12_Hours-HhMMjfiZOeFt]]},
+        {"NAT HUB", "https://www.mediafire.com/file/d89mbxqwkzjwt3o/SCRIPT_NAT_HUB.txt/file"},
+        {"NO LAG HUB", "https://www.mediafire.com/file/6t5t3pb7e8jtjvs/SCRIPT+NO+LAG+GROW+GARDEN.txt/file"},
+        {"SPEED HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()'},
+        {"BONK HUB", "https://www.mediafire.com/file/8snedlegw42wys7/SCRIPT+BONK+HUB+NORMAL.txt/file"},
+        {"THUNDAR Z", "https://www.mediafire.com/file/ny412eci4oz8sml/SCRIPT+THUNDAR+Z.txt/file"}
+    },
+    ["Hunty Zombie"] = {
+        {"HUNTY ZOMBIE SCRIPT", "https://www.mediafire.com/file/nlr7pib279xkfxv/SCRIPT+HUNTY+ZOMBIE+TORA+ISME.txt/file"},
+        {"SOLIX HUB", "https://www.mediafire.com/file/d66j12ef9ynbuv0/SCRIPT_SOLIX_HUB.txt/file"},
+        {"TYPE HUB", "https://www.mediafire.com/file/xjcmcidto7rsjl3/SCRIPT+TYPE+HUB+HUNTY+ZOMBIE.txt/file"},
+        {"ALCHEMY HUB", 'loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()'},
+        {"ZEE HUB", "https://www.mediafire.com/file/1tzpo49zjgij7gv/SCRIPT+ZEE+HUB+HUNTY+ZOMBIE.txt/file"},
+        {"CHIYO HUB", "https://www.mediafire.com/file/l6p95il7t8sa9yc/SCRIPT+CHIYO+HUB.txt/file"}
+    },
+    ["Ink Game"] = {
+        {"VOID WARE", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/inkgame.lua", true))()'}
+    },
+    ["Jailbreak"] = {
+        {"SOLIX", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/debunked69/solixloader/refs/heads/main/solix%20v2%20new%20loader.lua"))()'}
+    },
+    ["King Legacy"] = {
+        {"ARC HUB", [[
+getgenv().RaidUI = false
+getgenv().CustomDistance = 10
+getgenv().ResetFirstLoad = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ChopLoris/ArcHub/main/main.lua"))()]]},
+        {"OMG HUB", "https://www.mediafire.com/file/yqty2pkjbqmlfut/SCRIPT+NEW+OMG+HUB+2025.txt/file"}
+    },
+    ["Muscle Legends"] = {
+        {"ECLIPSE HUB", 'loadstring(game:HttpGet("https://protected-roblox-scripts.onrender.com/ef14c49aab8ad4e9ab69171b40989cd2"))()'},
+        {"SPEED HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()'}
+    },
+    ["Ninja Times"] = {
+        {"SCYLLA", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/acezqqq/Scylla/refs/heads/main/Loader.lua"))()'}
+    },
+    ["Piggy"] = {
+        {"STARHACK HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/StarHackScripts/StarHack-Hub-Deepstar-Hub/refs/heads/main/StarHack%20Hub%20-%20Piggy%20Pro%20Hub.txt"))()'}
+    },
+    ["Plantas vs Brainrot"] = {
+        {"SPEED HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()'},
+        {"CHIYO HUB", "https://www.mediafire.com/file/l6p95il7t8sa9yc/SCRIPT+CHIYO+HUB.txt/file"},
+        {"BLESSED HUB", "https://www.mediafire.com/file/oh1bmjdn3p2k5mq/SCRIPT+BLESSED+HUB+X.txt/file"},
+        {"RIFT HUB", "https://www.mediafire.com/file/1kforlypif7dbdu/SCRIPT+RIFT+HUB.txt/file"}
+    },
+    ["Prospecting"] = {
+        {"NUEVO SCRIPT", "https://www.mediafire.com/file/gmu353izjgrg33c/SCRIPT+PROSPECTING.txt/file"}
+    },
+    ["Raise a Floppa"] = {
+        {"RAISE A FLOPPA SCRIPT", 'loadstring(game:HttpGet("https://pastebin.com/raw/Fif1YVVR"))()'}
+    },
+    ["Smash Project"] = {
+        {"NEXOR HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/NexorHub/Games/refs/heads/main/Universal/Scripts.lua"))();'}
+    },
+    ["Steal a Brainrot"] = {
+        {"AJJAN", "https://www.mediafire.com/file/b8gzxd0hu3dmydc/SCRIPT+AJJAN+STEAL+A+BRAINROT.txt/file"},
+        {"ARBIX TP NUEVO", "https://www.mediafire.com/file/3jvwf5xpoa2ocar/SCRIPT+ARBIX+TP+VC+SERVER.txt/file"},
+        {"CHILLI HUB", "https://www.mediafire.com/file/edydn45v754qxm3/SCRIPT+CHILLI+HUB+BRAINROT.txt/file"},
+        {"HOHO HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()'},
+        {"LEGENDS BRAINROT", "https://www.mediafire.com/file/vj0in6milhaui15/SCRIPT+LEGENDS+BRAINROT.txt/file"},
+        {"LENNON V3", "https://www.mediafire.com/file/6phdz9th76ddq6v/SCRIPT+LENNON+V3.txt/file"},
+        {"LURK HACK V4", "https://www.mediafire.com/file/karv5yskubk0aqa/SCRIPT+LURK+HACKV4.txt/file"},
+        {"LEMON HUB", "https://www.mediafire.com/file/loxj38lxrqr31a4/SCRIPT+LEMON+HUB.txt/file"},
+        {"MIRANDAN HUB", "https://www.mediafire.com/file/nwwtnvdhzfo070h/SCRIPT+MIRANDAN+STEAL+A+BRAINROT.txt/file"},
+        {"MAKAL HUB", "https://www.mediafire.com/file/k29my232199w3k8/SCRIPT+MAKAL+HUB.txt/file"},
+        {"PUSARX", "https://www.mediafire.com/file/9taswgj9izhjd3w/SCRIPT+PUSARX+BRAINROT.txt/file"},
+        {"TELEGUIADOS HUB", "https://www.mediafire.com/file/8hhki6yha35hnxg/SCRIPT+TELEGUIADOS+STEAL+A+BRAINROT.txt/file"},
+        {"TP ARBIX", "https://www.mediafire.com/file/3hj8kgeynzmnx4g/NEW+TP+ARBIX+HUB.txt/file"},
+        {"KENGER HUB", "https://www.mediafire.com/file/s4ocwl0p4h0xvhf/SCRIPT+KENGER+HUB.txt/file"}
+    },
+    ["The Strongest Battlegrounds"] = {
+        {"MINHNHAT HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/minhnhatdepzai8-cloud/MinhNhat-HUB-V5/refs/heads/main/MinhNhatDZ.lua.txt"))()'},
+        {"SANS MOVESET", 'loadstring(game:HttpGet("https://paste.ee/r/rF9d3"))()'}
+    },
+    ["Vox Seas"] = {
+        {"FARM DINERO", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/shakaUnlocked/IiI/refs/heads/main/AutoVoxSeas.lua"))()'},
+        {"LEGEND HUB", 'loadstring(game:HttpGet("https://pastefy.app/ULaWpxKm/raw"))()'},
+        {"NEXUS HUB", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/CrazyHub123/NexusHubRevival/refs/heads/main/NewLoader.lua"))()'},
+        {"OMG HUB", "https://www.mediafire.com/file/yqty2pkjbqmlfut/SCRIPT+NEW+OMG+HUB+2025.txt/file"},
+        {"SPARKX SCRIPT", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/FloppHub-Team/Scripts-idk/refs/heads/main/Main/Vox%20Seas%20Open%20Source%20Cracked"))()'},
+        {"TYPE HUB", "https://www.mediafire.com/file/nzh2hrfjrt59e3i/SCRIPT+TYPE+HUB.txt/file"}
+    },
+    ["Weak Legacy"] = {
+        {"WEAK LEGACY SCRIPT", 'loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/sh/refs/heads/main/a"))()'},
+        {"NEW OMG HUB", "https://www.mediafire.com/file/yqty2pkjbqmlfut/SCRIPT+NEW+OMG+HUB+2025.txt/file"},
+        {"L4BIB HUB", "https://www.mediafire.com/file/o1ddp0bcc008i4o/SCRIPT+L4BIB+HUB+WEAK+LEGACY2.txt/file"}
+    },
+    ["Script Hub Universales"] = {
+        {"FloppHub", 'loadstring(game:HttpGet("https://is.gd/JwNMnE"))()'},
+    },
+    ["Servidores Privados Gratis"] = {
+        {"SERVIDORES GRATIS", "https://pastebin.com/raw/Ru4UQDpN"}
+    }
+}
+
+local sortedGames = {}
+for gameName, _ in pairs(tabs) do
+    table.insert(sortedGames, gameName)
+end
+table.sort(sortedGames)
+
+for _, gameName in ipairs(sortedGames) do
+    local tab = Window:CreateTab(gameName)
+    for _, script in ipairs(tabs[gameName]) do
+        addButton(tab, script[1], script[2])
+    end
+end
 
