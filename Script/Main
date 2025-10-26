@@ -2,14 +2,6 @@
 -- Canal: https://youtube.com/@anti-hambreadoscript-team
 -- Discord: https://discord.gg/rTGF5xhe3h
 
-local NotificationService = game:GetService("StarterGui")
-
-NotificationService:SetCore("SendNotification", {
-    Title = "⚡ Anti-Hambreado Script Hub",
-    Text = "💬 discord.gg/rTGF5xhe3h",
-    Duration = 10
-})
-
 local Rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/Rip-CampioneScript-Lol/Script-Hub/refs/heads/main/Script/UI"))()
 
 local Window = Rayfield:CreateWindow({
@@ -30,11 +22,10 @@ local Window = Rayfield:CreateWindow({
 
 local NotificationService = game:GetService("StarterGui")
 NotificationService:SetCore("SendNotification", {
-    Title = "Anti-Hambreado Script Team",
-    Text = "https://discord.gg/rTGF5xhe3h",
+    Title = "⚡ Anti-Hambreado Script Hub",
+    Text = "💬 discord.gg/rTGF5xhe3h",
     Duration = 10
 })
-
 local function copyToClipboard(text)
     setclipboard(text)
     NotificationService:SetCore("SendNotification", {
