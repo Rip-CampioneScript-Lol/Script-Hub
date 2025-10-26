@@ -72,7 +72,7 @@ local settingsTable = {
 
 	},
 	System = {
-		usageAnalytics = {Type = 'toggle', Value = true, Name = 'Send data to @Rtz_Andruuux'},
+		usageAnalytics = {Type = 'toggle', Value = true, Name = 'Send data to AntiHambreadoScriptTeam'},
 	}
 }
 
