@@ -26,6 +26,7 @@ NotificationService:SetCore("SendNotification", {
     Text = "💬 discord.gg/rTGF5xhe3h",
     Duration = 10
 })
+
 local function copyToClipboard(text)
     setclipboard(text)
     NotificationService:SetCore("SendNotification", {
@@ -35,27 +36,22 @@ local function copyToClipboard(text)
     })
 end
 
-local function addButton(tab, name, urlOrCode)
-    if string.find(urlOrCode, "loadstring") then
-        tab:CreateButton({
-            Name = name,
-            Callback = function()
-                loadstring(urlOrCode)()
-            end
-        })
-    elseif string.find(urlOrCode, "mediafire.com") then
-        tab:CreateButton({
-            Name = name,
-            Callback = function()
-                copyToClipboard(urlOrCode)
-            end
-        })
-    else
-        tab:CreateButton({
-            Name = name,
-            Callback = function()
-                loadstring(game:HttpGet(urlOrCode))()
-            end
+local function safeExecute(name, codeOrUrl)
+    local success, err = pcall(function()
+        if string.find(codeOrUrl, "loadstring") then
+            loadstring(codeOrUrl)()
+        elseif string.find(codeOrUrl, "mediafire.com") or string.find(codeOrUrl, "pastebin.com") then
+            copyToClipboard(codeOrUrl)
+        else
+            loadstring(game:HttpGet(codeOrUrl))()
+        end
+    end)
+    if not success then
+        warn("❌ Error al ejecutar script:", name, "| Error:", err)
+        NotificationService:SetCore("SendNotification", {
+            Title = "Script falló",
+            Text = "El script '" .. name .. "' falló al ejecutarse.",
+            Duration = 5
         })
     end
 end
@@ -88,7 +84,7 @@ local tabs = {
 local loader = loadstring
 local url = "https://raw.githubusercontent.com/hermanos-dev/hermanos-hub/refs/heads/main/BlockSpin/blockspin-pvp.lua"
 local response = game:HttpGet(url)
-loader(response)()]],
+loader(response)()]]},
         {"QUARTY", "https://www.mediafire.com/file/qg500i15aeucrbv/SCRIPT+QUARTY.txt/file"}
     },
     ["BloodMoney"] = {
@@ -263,7 +259,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/ChopLoris/ArcHub/main
     },
     ["Script Hub Universales"] = {
         {"FloppHub", 'loadstring(game:HttpGet("https://is.gd/JwNMnE"))()'},
-    },
     ["Servidores Privados Gratis"] = {
         {"SERVIDORES GRATIS", "https://pastebin.com/raw/Ru4UQDpN"}
     }
@@ -278,7 +273,11 @@ table.sort(sortedGames)
 for _, gameName in ipairs(sortedGames) do
     local tab = Window:CreateTab(gameName)
     for _, script in ipairs(tabs[gameName]) do
-        addButton(tab, script[1], script[2])
+        tab:CreateButton({
+            Name = script[1],
+            Callback = function()
+                safeExecute(script[1], script[2])
+            end
+        })
     end
 end
-
